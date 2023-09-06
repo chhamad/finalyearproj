@@ -1,0 +1,95 @@
+/* mainapp/static/css/handle_case.css */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+form input[type="submit"] {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 2px solid #ff4742;
+  color: #ff4742;
+  background: 0 0;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+  font-weight: 800;
+  font-size: 16px;
+  height: 42px;
+  
+}
+
+form input[type="submit"]:hover {
+  background-color: #ff4742;
+  color: #fff;
+}
+
+/* Optional: Add styles to indicate required fields */
+form .required:after {
+  content: '*';
+  color: red;
+  margin-left: 5px;
+}
+
+#id_case_detail {
+
+  color: rgba(0, 0, 0, .87);
+  border-bottom-color: rgba(0, 0, 0, .42);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .009375em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  align-self: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 16px 6px;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  border-bottom: 1px solid;
+  border-radius: 4px 4px 0 0;
+  background: rgb(245, 245, 245);
+  height: 56px;
+
+
+}
+
+#id_case_detail:hover {
+  border-bottom-color: rgba(0, 0, 0, .87);
+  background: #ececec;
+}
+
+#id_case_detail:focus {
+  border-color: #6200ee;
+}
+

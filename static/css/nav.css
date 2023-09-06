@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #2C3E50;
+  display: flex;
+  align-items: center; /* Vertically center the logo and navigation items */
+  padding-right: 20px; /* Add general spacing to the right */
+  padding-left: 20px; /* Add spacing from the left corner */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align navigation items to the right */
+  flex-grow: 1; /* Allow items to grow and fill the remaining space */
+}
+
+
+nav ul li:last-child {
+  margin-left: auto;
+}
+
+
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  display: block;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 20px 30px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #1E2A38;
+}
+
+
+
+
+.nav-user-profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden; /* Clip the image to fit the circular shape */
+}
+
+/* Style for the user profile image */
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+
+/* Footer */
+
+.testimonials {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 15%;
+}
+
+.testimonial {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.testimonial:last-child {
+  margin-right: 0;
+}
+
+.testimonial p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  margin-top: 10px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+
+footer {
+  background-color: #f7f7f7;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #ddd;
+
+}
+
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  
+  
+}
+
+footer ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+footer ul li:last-child {
+  margin-right: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+  
+}
+
+footer a:hover {
+  color: #007bff;
+}
+
+/* Center the footer links */
+footer ul {
+  text-align: center;
+}
+
+/* Logo Image Styles */
+.logo-image {
+  width: auto;
+  height: 40px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+/* Styling for flash messages */
+.alert {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: opacity 0.5s ease-in-out; /* Add transition for smooth fade-out effect */
+  background-color: #aec2d6;
+  color: brown;
+}
+
+/* Styling for error flash messages */
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+
+
+/* Responsive Styles... (remains the same) */
+@media only screen and (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}

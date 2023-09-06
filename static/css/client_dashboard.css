@@ -1,0 +1,182 @@
+/* mainapp/static/css/client_dashboard.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.dashboard-heading {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.dashboard-section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.case-list,
+.review-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.case-list li,
+.review-list li {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.dashboard-button {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #FFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+
+
+ul.lawyers-list {
+  list-style: none;
+  padding: 0;
+}
+
+.lawyer-item {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  list-style: none; 
+}
+
+.lawyer-item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.lawyer-item p {
+  margin: 5px 0;
+}
+
+
+/* Style for the user profile container */
+.user-profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* Clip the image to fit the circular shape */
+}
+
+/* Style for the user profile image */
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Maintain aspect ratio and cover the container */
+}
+
+.search-input {
+  display: inline-block;
+}
+
+.search-btn {
+
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+  padding: 0 32px;
+  border-radius: 6px;
+  color: #fff;
+  height: 48px;
+  font-size: 18px;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+}
+
+
+.search-btn:hover {
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3c4fe0;
+  transform: translateY(-2px);
+}
+
+.search-btn:active {
+  box-shadow: inset 0px 3px 7px #3c4fe0;
+  transform: translateY(2px);
+}
+
+select {
+  border: #007bff solid 3px;
+  background-color: #3c4fe0;
+  color: #ddd;
+  border-radius: 20%;
+}
+
+
+
+.card-btn {
+
+  outline: 0;
+  grid-gap: 8px;
+  align-items: center;
+  background: 0 0;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 16px;
+  gap: 8px;
+  justify-content: center;
+  line-height: 1.5;
+  overflow: hidden;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  transition: all .14s ease-out;
+  white-space: nowrap;
+
+
+}
+
+.card-btn:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px,-4px);
+}
+.card-btn:focus-visible{
+  outline-offset: 1px;
+}
+
+/* Responsive styles for smaller screens */
+
+@media (max-width: 600px) {
+  .dashboard-heading {
+    font-size: 28px;
+  }
+
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .dashboard-button {
+    padding: 8px 16px;
+    margin-top: 15px;
+  }
+}

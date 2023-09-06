@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<div class="container">
+  <div class="image-wrapper">
+    <img src="{% static 'imgs/balanceicon.png' %}" alt="Background Image" class="background-image">
+    <div class="overlay">
+      <h1>We Make It Easy to Find a Lawyer</h1>
+      <a href="{% url 'search_lawyers' %}" class="find-lawyer-button">Find a Lawyer</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-content">
+      <p class="section-text">
+          "A <strong>"Law Mart"</strong> is an online platform that connects individuals or businesses seeking legal services with legal professionals who offer their expertise and services. It acts as an intermediary, allowing clients to find lawyers, attorneys, or legal experts based on their specific needs, and lawyers to showcase their skills and offer their services to a wider audience."
+      </p>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

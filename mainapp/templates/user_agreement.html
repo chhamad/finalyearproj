@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/agreement.css' %}">
+    <link rel="stylesheet" href="{% static 'css/agreementModal.css' %}">
+    <div class="agreement-container">
+        <h1>User Agreement</h1>
+        <p>
+            This User Agreement governs your use of our website and services. By using our website, you agree to the terms outlined below:
+            <!-- Your user agreement content goes here -->
+            <button id="openModalButton">Open Agreements</button>
+
+        </p>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Terms of Service</h2>
+            <p>
+                Welcome to our website! By accessing and using our website, you agree to abide by the following terms and conditions:
+                <!-- Your terms of service content goes here -->
+            </p>
+            <button id="acceptTerms">Accept</button>
+        </div>
+    </div>
+    
+<script src="{% static 'js/agreementModal.js' %}"></script>
+{% endblock %}

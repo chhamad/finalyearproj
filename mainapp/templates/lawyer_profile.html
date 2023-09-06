@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/lawyer_profile.css' %}">
+<!-- lawyer_profile.html -->
+<div class="lawyer-profile">
+    <div class="user-profile">
+        <img src="{{ lawyer.image.url }}" alt="User Profile" class="profile-image">
+      </div>
+
+
+    <h1>{{ lawyer.user.username }}'s Profile</h1>
+    <p><strong>Specialization:</strong> {{ lawyer.specialization }}</p>
+    <p><strong>Location:</strong> {{ lawyer.location }}</p>
+    <p><strong>Bio:</strong> {{ lawyer.bio }}</p>
+    <a href="{% url 'search_lawyers' %}">Back to Search</a>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/cases.css' %}">
+
+<div class="container">
+  <h1 class="dashboard-heading">Welcome, {{ client.user.username }}!</h1>
+
+  <section class="dashboard-section">
+    <h2 class="section-heading">Your Cases:</h2>
+    <div class="case-cards">
+      {% for case in cases %}
+      <div class="case-card {% if case.status == 'approved' %}approved{% elif case.status == 'pending' %}pending{% elif case.status == 'in_progress' %}in-progress{% elif case.status == 'closed' %}closed{% else %}waiting{% endif %}">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="case_id" value="{{ case.case_id }}">
+            {{ form.as_p }}
+        </form>
+        <h3>Case ID: {{ case.case_id }}</h3>
+        <p><strong>Lawyer:</strong> {{ case.lawyer.user.username }}</p>
+        <p><strong>Client:</strong> {{ case.client.user.username }}</p>
+        <p><strong>Case Details:</strong> {{ case.case_detail }}</p>
+        <div class="status">
+          <p>Status:</p>
+          <ul>
+            <li {% if case.status == 'waiting_for_approval' %}class="active"{% endif %}>Waiting for Approval</li>
+            <li {% if case.status == 'approved' %}class="active"{% endif %}>Approved</li>
+            <li {% if case.status == 'pending' %}class="active"{% endif %}>Pending</li>
+            <li {% if case.status == 'in_progress' %}class="active"{% endif %}>In Progress</li>
+            <li {% if case.status == 'closed' %}class="active"{% endif %}>Closed</li>
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/my_lawyer.css' %}">
+
+<div class="container">
+  <h1>My Lawyers</h1>
+
+  <div class="lawyer-cards">
+    {% for lawyer in hired_lawyers %}
+      <div class="lawyer-card">
+        <div class="user-profile">
+          <img src="{{ lawyer.image.url }}" alt="User Profile" class="profile-image">
+        </div>
+        <h2>{{ lawyer.user.username }}</h2>
+        <p><strong>Specialization:</strong> {{ lawyer.specialization }}</p>
+        <p><strong>Location:</strong> {{ lawyer.location }}</p>
+        <p><strong>Bio:</strong> {{ lawyer.bio }}</p>
+        <p><strong>Average Rating:</strong>
+          <!-- Your average rating display code here -->
+        </p>
+        <div class="card-buttons">
+          {% url 'cases' as cases_url %}
+          {% if lawyer.has_case %}
+            <a href="{{ cases_url }}" class="request-case-btn">View Your Case Status</a>
+          {% else %}
+            <a href="{% url 'handle_case' %}?lawyer_id={{ lawyer.id }}" class="request-case-btn">Request a Case</a>
+          {% endif %}
+          <a href="{% url 'delete_hiring' lawyer_id=lawyer.id %}" class="delete-hiring-btn">Delete Hiring</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

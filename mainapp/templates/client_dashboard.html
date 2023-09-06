@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/client_dashboard.css' %}">
+
+<div class="container">
+  <input type="text" id="searchInput" placeholder="Search for lawyers...">
+
+  <h1 class="dashboard-heading">Welcome, {{ client.user.username }}!</h1>
+    <h2 class="section-heading">Hire a Lawyer:</h2>
+
+    <ul id="lawyerList" class="lawyer-list">
+      {% for lawyer in lawyers %}
+
+
+      <li class="lawyer-item">
+        <div class="user-profile">
+          <img src="{{ lawyer.image.url }}" alt="User Profile" class="profile-image">
+        </div>
+
+        <h2>{{ lawyer.user.username }}</h2>
+        <p><strong>Specialization:</strong> {{ lawyer.specialization }}</p>
+        <p><strong>Location:</strong> {{ lawyer.location }}</p>
+        <p><strong>Bio:</strong> {{ lawyer.bio }}</p>
+        <p><strong>Average Rating:</strong>
+                  
+          {% if lawyer.avg_rating %}
+          {{ lawyer.avg_rating }}
+              {% with rounded_avg=lawyer.avg_rating|floatformat:1 %}
+                  {% for i in '12345' %}
+                  
+                      {% if i <= rounded_avg %}
+                          <img style="width: 20px;" src="{% static 'imgs/filled_star.png' %}" alt="Filled Star">
+                      {% else %}
+                          <img style="width: 20px;" src="{% static 'imgs/unfilled_star.png' %}" alt="Unfilled Star">
+                      {% endif %}
+                  {% endfor %}
+              {% endwith %}
+          {% else %}
+              Not rated
+          {% endif %}
+      </p>
+      <a class="card-btn" href="{% url 'create_hiring' lawyer_id=lawyer.id %}">Hire {{ lawyer.user.username }}</a>
+
+
+      </li>
+      {% endfor %}
+    </ul>
+</div>
+
+<script src="{% static 'js/client_dashboard.js' %}"></script>
+{% endblock %}

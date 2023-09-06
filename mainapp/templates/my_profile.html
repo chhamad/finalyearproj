@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/my_profile.css' %}">
+<!-- my_profile.html -->
+<div class="my-profile">
+    <h1>My Profile</h1>
+    <div class="user-profile">
+        <img src="{{ user.customuser.image.url }}" alt="User Profile" class="profile-image">
+      </div>
+
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Specialization:</strong> {{ user.customuser.specialization }}</p>
+    <p><strong>Location:</strong> {{ user.customuser.location }}</p>
+    <p><strong>Bio:</strong> {{ user.customuser.bio }}</p>
+    <a class="edit-btn" href="{% url 'edit_profile' %}">Edit Profile</a>
+</div>
+{% endblock %}

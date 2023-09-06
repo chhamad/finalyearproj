@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/search_lawyers.css' %}">
+<!-- search_lawyers.html -->
+<div class="search-lawyers">
+    <h1>Search Lawyers</h1>
+    <form method="get">
+        {{ form.non_field_errors }}
+        <div class="search-input">
+            {{ form.specialization.label_tag }}
+            {{ form.specialization }}
+        </div>
+        <div class="search-input">
+            {{ form.location.label_tag }}
+            {{ form.location }}
+        </div>        
+        <button type="submit" class="search-btn">Search</button>
+    </form>
+    <ul class="lawyers-list">
+        {% for lawyer in lawyers %}
+            <li class="lawyer-item">
+                <div class="user-profile">
+                    <img src="{{ lawyer.image.url }}" alt="User Profile" class="profile-image">
+                </div>
+    
+                <h2>{{ lawyer.user.username }}</h2>
+                <p><strong>Specialization:</strong> {{ lawyer.specialization }}</p>
+                <p><strong>Location:</strong> {{ lawyer.location }}</p>
+                <p><strong>Bio:</strong> {{ lawyer.bio }}</p>
+                <p><strong>Average Rating:</strong>
+                  
+                    {% if lawyer.avg_rating %}
+                    {{ lawyer.avg_rating }}
+                        {% with rounded_avg=lawyer.avg_rating|floatformat:1 %}
+                            {% for i in '12345' %}
+                            
+                                {% if i <= rounded_avg %}
+                                    <img style="width: 20px;" src="{% static 'imgs/filled_star.png' %}" alt="Filled Star">
+                                {% else %}
+                                    <img style="width: 20px;" src="{% static 'imgs/unfilled_star.png' %}" alt="Unfilled Star">
+                                {% endif %}
+                            {% endfor %}
+                        {% endwith %}
+                    {% else %}
+                        Not rated
+                    {% endif %}
+                </p>
+                <a class="card-btn" href="{% url 'view_profile' lawyer.id %}">View Profile</a>
+                <a class="card-btn" href="{% url 'leave_review' lawyer.id %}">Leave a Review</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    
+</div>
+
+
+
+
+
+
+
+{% endblock %}

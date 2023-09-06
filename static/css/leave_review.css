@@ -1,0 +1,164 @@
+/* mainapp/static/css/leave_review.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .review-form {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+
+  .star-rating {
+    display: inline-block;
+  }
+  .star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    cursor: pointer;
+  }
+  
+  .star.unfilled {
+    background-image: url('/static/imgs/unfilled_star.png');
+  }
+  
+  .star.filled {
+    background-image: url('/static/imgs/filled_star.png');
+  }
+  
+  
+#review_detail{
+
+
+  color: rgba(0,0,0,.87);
+  border-bottom-color: rgba(0,0,0,.42);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .009375em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  align-self: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 16px 6px;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  border-bottom: 1px solid;
+  border-radius: 4px 4px 0 0;
+  background: rgb(245, 245, 245);
+  height: 56px;
+
+
+
+
+}
+#review_detail:hover{
+  border-bottom-color: rgba(0,0,0,.87);
+  background: #ececec;
+}
+#review_detail:focus{
+  border-color: #6200ee;
+}
+ 
+.card-btn {
+
+  outline: 0;
+  grid-gap: 8px;
+  align-items: center;
+  background: 0 0;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 16px;
+  gap: 8px;
+  justify-content: center;
+  line-height: 1.5;
+  overflow: hidden;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  transition: all .14s ease-out;
+  white-space: nowrap;
+
+
+}
+
+.card-btn:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px,-4px);
+}
+.card-btn:focus-visible{
+  outline-offset: 1px;
+}
+
+  
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 28px;
+    }
+  
+    label {
+      font-size: 16px;
+    }
+  
+    input[type="number"],
+    textarea {
+      font-size: 14px;
+    }
+  
+    input[type="submit"] {
+      font-size: 16px;
+      margin-top: 15px;
+    }
+  }
+  

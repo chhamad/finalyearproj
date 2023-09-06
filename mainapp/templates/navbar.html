@@ -1,0 +1,55 @@
+{% load static %}
+<nav>
+  <ul>
+    <li>
+      <img src="{% static 'imgs/logo.png' %}" style="margin-right: 220px;" alt="logo Image" class="logo-image">
+    </li>
+    <li><a href="{% url 'home' %}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'my_profile' %}">My Profile
+      <i class="fa fa-user" aria-hidden="true"></i>
+    </a></li>
+
+    <li>
+      <a href="{% url 'chat_view' %}">Chat
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+      </a>
+    </li>
+      {% if user.customuser.user_type == 'Lawyer' %}
+
+
+
+        <li><a href="{% url 'lawyer_cases' %}">My Cases
+          <i class="fa fa-university" aria-hidden="true"></i>
+        </a></li>
+        
+
+      {% else %}
+
+      <li><a href="{% url 'search_lawyers' %}">Search Lawyer
+        <i class="fa fa-user-secret" aria-hidden="true"></i>
+      </a></li>
+
+      <li><a href="{% url 'client_dashboard' %}">Client Dashboard
+        <i class="fa fa-male" aria-hidden="true"></i>
+      </a></li>
+
+ 
+      {% endif %}
+
+      <li>
+        <div class="nav-user-profile">
+          <img src="{{ user.customuser.image.url }}" alt="User Profile" class="profile-image">
+        </div>
+      
+      </li>
+      <li><a href="{% url 'logout' %}" style="background-color: brown;">Logout
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </a></li>
+    {% else %}
+      <li><a href="{% url 'login' %}">Login
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+      </a></li>
+    {% endif %}
+  </ul>
+</nav>
